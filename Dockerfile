@@ -27,6 +27,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	bash-completion \
 	sudo
 
+RUN apt-get install -y libmcrypt-dev && \
+    pecl install mcrypt-1.0.1 && \
+    docker-php-ext-enable mcrypt
+
 # Install Magento Dependencies
 RUN docker-php-ext-configure \
   gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/; \
