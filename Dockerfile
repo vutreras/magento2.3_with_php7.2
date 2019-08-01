@@ -8,7 +8,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	libicu-dev \
   libssl-dev \
 	libjpeg62-turbo-dev \
-	libmcrypt-dev \
 	libedit-dev \
 	libedit2 \
 	libxslt1-dev \
@@ -40,7 +39,6 @@ RUN docker-php-ext-configure \
   bcmath \
   intl \
   mbstring \
-  mcrypt \
   pdo_mysql \
   soap \
   xsl \

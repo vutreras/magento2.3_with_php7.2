@@ -2,7 +2,7 @@ version: '3.1'
 services:
 
   web:
-    container_name: magento2.2_7.1
+    container_name: magento2.3_7.2
     build: .
     ports:
       - 80:80
@@ -17,10 +17,10 @@ services:
     links:
       - db
     networks:
-      - magento2.2_network_7.1
+      - magento2.3_network_7.2
 
   db:
-    container_name: mariadb_10.4_7.1
+    container_name: mariadb_10.4_7.2
     image: mariadb:10.4
     ports:
      - 3300:3306
@@ -30,14 +30,14 @@ services:
       - MYSQL_USER=magento
       - MYSQL_PASSWORD=magento
     volumes:
-      - magento2.2_volume_7.1:/var/lib/mysql
+      - magento2.3_volume_7.2:/var/lib/mysql
     networks:
-      - magento2.2_network_7.1
+      - magento2.3_network_7.2
 
 networks:
-  magento2.2_network_7.1:
+  magento2.3_network_7.2:
     driver: bridge
 
 volumes:
-  magento2.2_volume_7.1:
+  magento2.3_volume_7.2:
     driver: local
